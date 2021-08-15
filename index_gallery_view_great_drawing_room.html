@@ -90,7 +90,7 @@
 				scene.background = new THREE.Color( 0xffffff );
 				scene.fog = new THREE.Fog( 0xffffff, 0, 750 );
 
-				const light = new THREE.HemisphereLight( 0xeeeeff, 0x777788, 4 );
+				const light = new THREE.HemisphereLight( 0xeeeeff, 0x777788, 2 );
 				light.position.set( 0.5, 1, 0.75 );
 				scene.add( light );
 
@@ -128,7 +128,7 @@
                 // Box Rendering - manual for now
                 var textureLoader = new THREE.TextureLoader();
 				// Warhol
-                crateTexture = textureLoader.load("https://arthology-files.s3.amazonaws.com/documents/2/1_2_1628576812.png?AWSAccessKeyId=AKIAQJ4TKPUZGUAQXN5D&Signature=R%2Bwi9s9cFRYiJNDifVVTabhq558%3D&Expires=1628991343");
+                crateTexture = textureLoader.load("https://bafybeibzxrvxuehttiiyg6vitqfpb2skbqiya2zoe7d755jy47z6teg4sq.ipfs.dweb.link/");
                 
                 const crate = new THREE.Mesh(
                     new THREE.BoxGeometry(20, 20, 20),
@@ -146,10 +146,10 @@
                 scene.add( crate );
                 
 				// Le Banquet http://app.arthology.io/artworks/22/
-				crateTexture1 = textureLoader.load("https://arthology-files.s3.amazonaws.com/documents/2/2_1628836735.jpg?AWSAccessKeyId=AKIAQJ4TKPUZGUAQXN5D&Signature=qFN%2FUE3UQzZmzOtSJaWdp5L7duQ%3D&Expires=1628993095");
+				crateTexture1 = textureLoader.load("https://bafkreicba6damq2ii7p7vc6suxtb3xvuoqhggy2udbiurq2ndhyjim5wmu.ipfs.dweb.link/");
                 
                 const crate1 = new THREE.Mesh(
-                    new THREE.BoxGeometry(20, 14.8, 20),
+                    new THREE.BoxGeometry(20, 20/406*565, 20),
                     new THREE.MeshPhongMaterial({
                     color: 0xffffff,
                     map: crateTexture1,

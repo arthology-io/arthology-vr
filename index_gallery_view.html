@@ -90,7 +90,7 @@
 				scene.background = new THREE.Color( 0xffffff );
 				scene.fog = new THREE.Fog( 0xffffff, 0, 750 );
 
-				const light = new THREE.HemisphereLight( 0xeeeeff, 0x777788, 4 );
+				const light = new THREE.HemisphereLight( 0xeeeeff, 0x777788, 3 );
 				light.position.set( 0.5, 1, 0.75 );
 				scene.add( light );
 
@@ -126,11 +126,12 @@
 				} );
 
                 // Box Rendering - manual for now
+				//Mona Lisa
                 var textureLoader = new THREE.TextureLoader();
-                crateTexture = textureLoader.load("https://arthology-files.s3.amazonaws.com/documents/2/1_2_1628576812.png?AWSAccessKeyId=AKIAQJ4TKPUZGUAQXN5D&Signature=SUoZ16ytKmJa7IgKMTCpn2Qm2%2BQ%3D&Expires=1628983935");
+                crateTexture = textureLoader.load("https://bafkreicqvqztblglwnks3t7qcb4tohw3yut2fjyhe5cvrqkud3ps7pda3q.ipfs.dweb.link/");
                 
                 const crate = new THREE.Mesh(
-                    new THREE.BoxGeometry(20, 20, 0.5),
+                    new THREE.BoxGeometry( 10, 15, 0.5),
                     new THREE.MeshPhongMaterial({
                     color: 0xffffff,
                     map: crateTexture,
@@ -143,8 +144,8 @@
                 crate.matrixAutoUpdate = false;
                 scene.add( crate );
                 
-                
-                crateTexture1 = textureLoader.load("https://arthology-files.s3.amazonaws.com/documents/2/2_2_1628576857.png?AWSAccessKeyId=AKIAQJ4TKPUZGUAQXN5D&Signature=WOswrdGKoFSPd4Xkr%2BNpPTOQ8TY%3D&Expires=1628984885");
+                // Starry night
+                crateTexture1 = textureLoader.load("https://bafkreidnfnuqm4brq4mir42a5pb6nslunrowvsgp5fo6q6mtyvc7gwmqw4.ipfs.dweb.link");
                 
                 const crate1 = new THREE.Mesh(
                     new THREE.BoxGeometry(20, 15, 0.5),
