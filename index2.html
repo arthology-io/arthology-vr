@@ -266,65 +266,37 @@
 
       if (artNumber <= artNumberCount) { break; }
 
-      // crateTexture1 = textureLoader.load("https://"+ artworks[artNumberCount].filehash +".ipfs.dweb.link/");
+      const img = new Image();
 
 
-      const planeGeom = new THREE.PlaneGeometry(15, 15);
-      const imgSrc = "https://"+ artworks[artNumberCount].filehash +".ipfs.dweb.link/";
-      let  mesh;
-      let tex = new THREE.TextureLoader().load(imgSrc, (tex) => {
-        tex.needsUpdate = true;
-
-        if ( tex.image.width < tex.image.height ) {
-          mesh.scale.set(1.0, tex.image.height /  tex.image.width , 1.0);
-        } else {
-          mesh.scale.set(tex.image.width / tex.image.height, 1.0 , 1.0);
-        }
-
-      });
-      const material = new THREE.MeshLambertMaterial({
-        color: 0xffffff,
-        map: tex,
-        side: THREE.DoubleSide,
-      });
-      mesh = new THREE.Mesh(planeGeom, material);
-      mesh.position.x = galleryObjs.artworks[art].pos_x;
-      mesh.position.y = galleryObjs.artworks[art].pos_y;
-      mesh.position.z = galleryObjs.artworks[art].pos_z;
-      mesh.rotateX(degrees_to_radians(galleryObjs.artworks[art].rot_x));
-      mesh.rotateY(degrees_to_radians(galleryObjs.artworks[art].rot_y));
-      mesh.rotateZ(degrees_to_radians(galleryObjs.artworks[art].rot_z));
-      // mesh.updateMatrix();
-      // mesh.matrixAutoUpdate = false;
-      scene.add(mesh);
+      crateTexture1 = textureLoader.load("https://"+ artworks[artNumberCount].filehash +".ipfs.dweb.link/");
 
 
-      //
-      // const crate1 = new THREE.Mesh(
-      //         new THREE.PlaneGeometry(20, 20),
-      //         new THREE.MeshPhongMaterial({
-      //           color: 0xffffff,
-      //           map: crateTexture1,
-      //           side: THREE.DoubleSide,
-      //         })
-      // );
-      // console.log('a');
-      // img.onload = function() {
-      //   console.log(this.width + 'x' + this.height);
-      // }
-      // img.src = "https://"+ artworks[artNumberCount].filehash +".ipfs.dweb.link/";
-      //
-      // console.log('b');
-      // crate1.position.x = galleryObjs.artworks[art].pos_x;
-      // crate1.position.y = galleryObjs.artworks[art].pos_y;
-      // crate1.position.z = galleryObjs.artworks[art].pos_z;
-      // crate1.rotateX(degrees_to_radians(galleryObjs.artworks[art].rot_x));
-      // crate1.rotateY(degrees_to_radians(galleryObjs.artworks[art].rot_y));
-      // crate1.rotateZ(degrees_to_radians(galleryObjs.artworks[art].rot_z));
-      // crate1.updateMatrix();
-      // crate1
-      // scene.add( crate1 );
-      // console.log('c');
+      const crate1 = new THREE.Mesh(
+              new THREE.PlaneGeometry(20, 20),
+              new THREE.MeshPhongMaterial({
+                color: 0xffffff,
+                map: crateTexture1,
+                side: THREE.DoubleSide,
+              })
+      );
+      console.log('a');
+      img.onload = function() {
+        console.log(this.width + 'x' + this.height);
+      }
+      img.src = "https://"+ artworks[artNumberCount].filehash +".ipfs.dweb.link/";
+
+      console.log('b');
+      crate1.position.x = galleryObjs.artworks[art].pos_x;
+      crate1.position.y = galleryObjs.artworks[art].pos_y;
+      crate1.position.z = galleryObjs.artworks[art].pos_z;
+      crate1.rotateX(degrees_to_radians(galleryObjs.artworks[art].rot_x));
+      crate1.rotateY(degrees_to_radians(galleryObjs.artworks[art].rot_y));
+      crate1.rotateZ(degrees_to_radians(galleryObjs.artworks[art].rot_z));
+      crate1.updateMatrix();
+      crate1.matrixAutoUpdate = false;
+      scene.add( crate1 );
+      console.log('c');
 
 
 
