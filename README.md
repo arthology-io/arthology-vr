@@ -6,4 +6,5 @@ index_gallery_view.html - is the main file for 3D visualization of galleries
 
 To be updated:
 - better lighting in the gallery
+- variety of galleries to be added
 
